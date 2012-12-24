@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="attending_class">正在上课</string>
+    <string name="not_in_class">未上课</string>
+    <string name="student_signed">，已签到</string>
+    <string name="student_not_signed">，未签到</string>
+    <string name="student_ask_for_leave">，已请假</string>
+    
+</resources>

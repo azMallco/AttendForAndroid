@@ -1,0 +1,169 @@
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    tools:context=".HomeActivity" >
+    
+    <ScrollView 
+        android:id="@+id/home_form"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        
+        <LinearLayout 
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            
+
+            <TextView 
+                android:id="@+id/home_user"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:textSize="35sp"
+                android:text="20091004136"/> <!-- 完成源代码后删除 -->
+                
+            <View  android:layout_height="1dp" android:background="#DCDCDC" android:layout_width="fill_parent"></View> 
+            
+            <TableLayout
+                android:id="@+id/home_table1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:shrinkColumns="1" 
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp">
+                
+                <TableRow >
+                    
+                    <TextView
+                        android:text="@string/home_state"
+                        android:textSize="@dimen/table_text_size"/>
+                    <TextView
+                        android:id="@+id/home_state"
+                        android:textSize="@dimen/table_text_size"
+                        android:textColor="#FF3030"  
+                        android:text="正在上课"/>    <!-- 完成源代码后删除 后两行 -->
+                    
+                </TableRow>
+                
+            
+            </TableLayout>
+            
+            <View  android:layout_height="1dp" android:background="#DCDCDC" android:layout_width="fill_parent"></View> 
+                "
+            
+            <TableLayout
+                android:id="@+id/home_table2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:shrinkColumns="1" 
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp">
+
+                <TableRow >
+
+                    <TextView
+                        android:text="@string/home_teacher"
+                        android:textSize="@dimen/table_text_size" />
+
+                    <TextView
+                        android:id="@+id/home_teacher"
+                        android:textSize="@dimen/table_text_size"
+                        android:text="罗老师" /> <!-- 完成源代码后删除 text-->
+ 
+                </TableRow>
+                
+                <TableRow >
+                    
+                    <TextView 
+                        android:text="@string/home_lesson_time"
+                        android:textSize="@dimen/table_text_size"/>
+                
+                    <TextView 
+                        android:id="@+id/home_lesson_time"
+                        android:textSize="@dimen/table_text_size"
+                        android:singleLine="false"
+                        android:text="周二  10:30-11:30"/> <!-- 完成源代码后删除 text-->
+                    
+                </TableRow>
+                
+                <TableRow >
+                    
+                    <TextView 
+                        android:text="@string/home_lesson_add"
+                        android:textSize="@dimen/table_text_size" />
+                    <TextView
+                        android:id="@+id/home_lesson_add"
+                        android:textSize="@dimen/table_text_size"
+                        android:text="南校区教学楼A202" /> <!-- 完成源代码后删除 text-->"
+                    
+                </TableRow>
+                
+            </TableLayout>
+            
+            <View  android:layout_height="1dp" android:background="#DCDCDC" android:layout_width="fill_parent"></View>    
+            
+            <TableLayout
+                android:id="@+id/home_table3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp">
+                
+                <TableRow>
+                    
+                    <TextView
+                        android:text="@string/home_seat"
+                        android:textSize="@dimen/table_text_size"/>
+                    
+                    <TextView
+                        android:id="@+id/home_seat"
+                        android:textSize="@dimen/table_text_size"
+                        android:text="03排06座"/><!-- 完成源代码后删除 text-->
+                    
+                </TableRow>
+                
+            </TableLayout>
+            
+            <View  android:layout_height="1dp" android:background="#DCDCDC" android:layout_width="fill_parent"></View> 
+            
+            <TableLayout 
+                android:id="@+id/home_table4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:stretchColumns="0,1">
+                
+                <TableRow>
+
+                    <Button
+                        android:id="@+id/home_button_sign"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"          
+                        android:gravity="center"
+                        android:text="@string/home_sign" />
+
+                    <Button
+                        android:id="@+id/home_button_school_timetable"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@string/home_school_timetable" />
+                    
+                </TableRow>
+                
+            </TableLayout>
+  
+            </LinearLayout>
+        
+        
+    </ScrollView>
+
+
+</merge>

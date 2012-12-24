@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="register_telenumber">请输入手机号码</string>
+    <string name="register_student_number">请输入学号</string>
+    <string name="register_password">请输入密码</string>
+    <string name="register_second_password">请再一次输入密码</string>
+    <string name="register">激活</string>
+    <string name="register_progress_signing_in">正在激活……</string>
+    
+</resources>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ListActivity" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="5dp" >
+
+        <TextView
+            android:id="@+id/list_lesson_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:text="线性代数"
+            android:textSize="20sp" />
+ <!-- 完成源代码后删除text -->
+
+        <TextView
+            android:id="@+id/list_lesson_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/list_lesson_name"
+            android:text="每周二，10:30-11:30"
+            android:textSize="14sp" />
+ <!-- 完成源代码后删除text -->
+
+        <TextView
+            android:id="@+id/list_student_state"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/list_lesson_name"
+            android:text="@string/student_not_signed"
+            android:textSize="14sp" />
+ <!-- 完成源代码后删除text -->
+
+        <TextView
+            android:id="@+id/list_lesson_state"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/list_lesson_name"
+            android:layout_toLeftOf="@id/list_student_state"
+            android:text="@string/not_in_class"
+            android:textSize="14sp" />
+ <!-- 完成源代码后删除text -->
+
+    </RelativeLayout>
+
+</merge>
