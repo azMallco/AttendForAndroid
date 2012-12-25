@@ -1,7 +1,7 @@
 <resources>
 
     <!-- Strings related to login -->
-    <string name="prompt_email">电子邮箱</string>
+    <string name="prompt_email">学号</string>
     <string name="prompt_password">密码</string>
     <string name="action_sign_in_register">激活</string><string name="action_sign_in_short">登录</string>
     

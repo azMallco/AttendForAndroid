@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="attendce_teacher">任课老师：</string>
+    <string name="attendce_lesson_time">上课时间：</string>
+    <string name="attendce_lesson_add">上课地点：</string>
+    <string name="attendce_button_sign">签到</string>
+    <string name="attendce_button_leave">请假</string>
+    
+</resources>

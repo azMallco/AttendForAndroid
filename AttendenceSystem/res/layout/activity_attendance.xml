@@ -3,6 +3,173 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
     
+    <ScrollView 
+        android:id="@+id/attendce_form"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        
+        <LinearLayout 
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            
+            <TextView 
+            android:id="@+id/attendce_lesson"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="5dp"
+            android:textSize="35sp"
+            android:text="高等数学"/><!-- 完成代码后删除 -->
+            
+            <View  android:layout_height="1dp" android:background="#DCDCDC" android:layout_width="fill_parent"></View> 
+            
+            <TableLayout 
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:shrinkColumns="1" 
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp">
+                
+                <TableRow >
+                    
+                    <TextView 
+                        android:text="@string/attendce_teacher"
+                        android:textSize="@dimen/table_text_size"/>
+                    <TextView 
+                        android:id="@+id/attendce_teacher"
+                        android:textSize="@dimen/table_text_size"
+                        android:text="罗老师"/>"
+                    
+                 </TableRow>
+                 
+                <TableRow >
+                    
+                    <TextView 
+                        android:text="@string/attendce_lesson_time"
+                        android:textSize="@dimen/table_text_size"/>
+                    <TextView
+                        android:id="@+id/attendce_lesson_time"
+                        android:textSize="@dimen/table_text_size"
+                        android:text="周二&#x000A;10:30-11:30"/><!-- 完成代码删除 -->
+                    "
+                </TableRow>
+                
+                <TableRow >
+                    <TextView 
+                        android:text="@string/attendce_lesson_add"
+                        android:textSize="@dimen/table_text_size"/>
+                    <TextView
+                        android:id="@+id/attendce_lesson_add"
+                        android:textSize="@dimen/table_text_size"
+                        android:text="F 304"/>
+                    
+                </TableRow>
+                
+            </TableLayout>
+           
+            <View  android:layout_height="1dp" android:background="#DCDCDC" android:layout_width="fill_parent"></View>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp"
+                android:textSize="25sp"
+                android:text="座位：" />
+            
+            
+            <!-- 下面部分按照签到状态区分 -->
+            
+            <!-- 以下为未签到时 -->
+            
+            <TableLayout
+                android:id="@+id/attendce_status"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:stretchColumns="0,1"
+                android:visibility="visible">       <!-- 当已签到的时候，不显示下拉框及按钮，可视状态改为“gone” -->
+                
+                
+                <TableRow>
+                
+            
+            
+                    <Spinner 
+                        android:id="@+id/attendce_row_spinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginTop="5dp"
+                        />
+                
+                </TableRow>    
+                
+                <TableRow >
+            
+                    <Spinner 
+                        android:id="@+id/attendce_array_spinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginTop="5dp"/>
+                
+                </TableRow>
+            
+            
+                
+                <TableRow>
+
+                    <Button
+                        android:id="@+id/attendce_button_sign"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"          
+                        android:gravity="center"
+                        android:text="@string/attendce_button_sign" />
+
+                    <Button
+                        android:id="@+id/attendce_button_leave"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@string/attendce_button_leave" />
+                    
+                </TableRow>
+                
+            </TableLayout>
+            
+            <!-- 以上按签到状态选择是否显示 -->
+            
+            <!-- 以下按签到状态选择是否显示 -->
+            
+            <TextView 
+                android:id="@+id/attendce_status_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:textSize="35sp"
+                android:text="已签到"
+                android:visibility="gone"/>
+            
+      
+        </LinearLayout>
+        
+        
+        
+        
+    </ScrollView>
+    
     
 
 </merge>
