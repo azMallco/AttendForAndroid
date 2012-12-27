@@ -13,5 +13,6 @@
     <string name="error_field_required">This field is required</string>
     
     <string name="text_register_hint">还没有账号？请先注册</string>
+    <string name="login_URL"/>
 
 </resources>

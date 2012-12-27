@@ -1,6 +1,7 @@
 package com.example.attendencesystem;
 
 import android.animation.Animator;
+import org.json.JSONStringer;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
 import android.app.Activity;
@@ -19,6 +20,8 @@ import android.widget.Button;
 
 public class LoginActivity extends Activity {
 	
+	private String LoginURL = "";
+	
 	private String email;
 	private String password;
 	
@@ -28,18 +31,21 @@ public class LoginActivity extends Activity {
 	private Button login;
 	private Button register;
 	
+	private View mLoginStatusView;
+	private View mLoginFormView;
+	
 	protected void onCreat(Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);
 		
 	    setContentView(R.layout.activity_login);
 	    
-	    //添加对应页面
+	    //添加对应控件
 	    emailview = (EditText)findViewById(R.id.email);
 	    passwordview = (EditText)findViewById(R.id.password);
 		
 	    //页面获取账号密码
-		emailview.setText(email);
-		passwordview.setText(password);
+		//emailview.setText(email);
+		//passwordview.setText(password);
 		
 		//添加登录按键监听
 		login = (Button)findViewById(R.id.sign_in_button);
@@ -48,6 +54,7 @@ public class LoginActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				// TODO 添加登录方法
+				attemptLogin();
 				
 			}
 		});
@@ -70,21 +77,95 @@ public class LoginActivity extends Activity {
 	private void attemptLogin(){
 		
 		//判断账号是否为空
-		if (email == null){
+		if (emailview.getText().toString() == null){
 		    emailview.setError("账号不能为空");
-		    return;
+		    emailview.requestFocus();
 		}
 		//判断密码是否为空
-		if (password == null){
+		if (passwordview.getText().toString() == null){
 			passwordview.setError("密码不能为空");
-			return;
+			passwordview.requestFocus();
 		}
+		//待加入更加复杂的检查
 		
+		
+		//这里开始显示进度条
+		ShowProgress(true);
+		
+		//开始连接服务器
+		try {
+			
+			//把账号密码封装到json里
+			JSONStringer Json = new JSONStringer ();
+			
+			Json.object()
+			.key("id").value(emailview.getText().toString())
+			.key("password").value(passwordview.getText().toString())
+			.endObject();
+			
+			//调用webDataApi中的PostRequest连接服务器并提交数据,获取结果
+			webDataApi wda = new webDataApi();
+			String result = wda.PostRequest(LoginURL, Json);
+			
+			//处理服务器回应的结果
+			
+			
+		}catch( Exception e ){
+			
+			//出错后取消显示进度条
+			ShowProgress(false);
+			
+		}
 		
 		
 	}
 	
 	
+	//显示进度条的函数
+	public void ShowProgress( final boolean show ){
+	  
+		
+		mLoginStatusView = findViewById (R.id.login_status);
+		mLoginFormView = findViewById (R.id.login_form);
+		
+		
+      // On Honeycomb MR2 we have the ViewPropertyAnimator APIs, which allow
+      // for very easy animations. If available, use these APIs to fade-in
+      // the progress spinner.
+//      if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB_MR2) {
+//          int shortAnimTime = getResources().getInteger(android.R.integer.config_shortAnimTime);
+//
+//          mLoginStatusView.setVisibility(View.VISIBLE);
+//          mLoginStatusView.animate()
+//                  .setDuration(shortAnimTime)
+//                  .alpha(show ? 1 : 0)
+//                  .setListener(new AnimatorListenerAdapter() {
+//                      @Override
+//                      public void onAnimationEnd(Animator animation) {
+//                          mLoginStatusView.setVisibility(show ? View.VISIBLE : View.GONE);
+//                      }
+//                  });
+//
+//          mLoginFormView.setVisibility(View.VISIBLE);
+//          mLoginFormView.animate()
+//                  .setDuration(shortAnimTime)
+//                  .alpha(show ? 0 : 1)
+//                  .setListener(new AnimatorListenerAdapter() {
+//                      @Override
+//                      public void onAnimationEnd(Animator animation) {
+//                          mLoginFormView.setVisibility(show ? View.GONE : View.VISIBLE);
+//                      }
+//                  });
+//      } else {
+          // The ViewPropertyAnimator APIs are not available, so simply show
+          // and hide the relevant UI components.
+          mLoginStatusView.setVisibility(show ? View.VISIBLE : View.GONE);
+          mLoginFormView.setVisibility(show ? View.GONE : View.VISIBLE);
+//      }
+		
+		
+		
+	}
 	
 }
 
